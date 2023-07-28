@@ -90,7 +90,7 @@ export const MinutesAmountInput = styled(BaseInput)`
   width: 4rem;
 `
 
-export const StarCountDownButton = styled.button`
+export const BaseCountDownButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,15 +103,26 @@ export const StarCountDownButton = styled.button`
   border-radius: 8px;
 
   cursor: pointer;
-  background-color: ${(props) => props.theme['green-500']};
   color: ${(props) => props.theme['gray-100']};
 
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
   }
+`
+
+export const StarCountDownButton = styled(BaseCountDownButton)`
+  background-color: ${(props) => props.theme['green-500']};
 
   &:not(:disabled):hover {
     background-color: ${(props) => props.theme['green-700']};
+  }
+`
+
+export const StopCountDownButton = styled(BaseCountDownButton)`
+  background-color: ${(props) => props.theme['red-500']};
+
+  &:not(:disabled):hover {
+    background-color: ${(props) => props.theme['red-700']};
   }
 `
